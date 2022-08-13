@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler
 
 @ControllerAdvice
-open class GlobalExceptionHandler : ResponseEntityExceptionHandler() {
+class GlobalExceptionHandler : ResponseEntityExceptionHandler() {
     @ExceptionHandler(value = [AccountNotFoundException::class])
     protected fun handleAccountNotFoundException(
         ex: AccountNotFoundException

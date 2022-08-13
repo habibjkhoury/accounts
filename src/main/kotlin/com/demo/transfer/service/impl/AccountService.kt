@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class AccountService(private val accountRepository: AccountRepository): IAccountService {
+class AccountService(val accountRepository: AccountRepository): IAccountService {
     override fun get(id: Long): AccountDetailsResponse {
         val account = accountRepository.findById(id).getValueIfPresent("Account Not Found")
         return AccountDetailsResponse(account.id, account.iban, account.balance)
