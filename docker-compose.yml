@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  transfer:
+    image: transfer
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/transfer
+    ports:
+      - "8080:8080"
